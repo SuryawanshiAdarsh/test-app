@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+    <ion-card>
+        <ion-button (click)="takePicture()">
+          <ion-icon name="camera"></ion-icon>
+        </ion-button>
+    </ion-card>
+
+  <ion-grid>
+  <ion-row>
+    <ion-col 
+        sizeXs="12" sizeSm="6" size="4" sizeMd="4" sizeLg="3" sizeXl="2" 
+        *ngFor="let image of images">
+        <div>
+          <ion-img  src="image" ></ion-img>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card>
+    <ion-item>
+      <ion-icon slot="start" name="attach-outline" (click)="addAttachment()"></ion-icon>
+      <ion-label slot="end" class="ion-text-wrap" *ngIf="attachment" >
+        {{ attachment.name }}
+    </ion-label>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
